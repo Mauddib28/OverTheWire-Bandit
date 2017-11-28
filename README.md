@@ -134,4 +134,25 @@ Ports | Service
 31691 | echo
 31790 | msdtc <- SSL
 31960 | echo
+
 (Get RAS private key)
+
+## Level 17
+Use ssh from level 16 using RSA key
+
+**Note:** `chmod 600 id_rsa`
+* `ssh -i id_rsa -l bandit17 localhost`
+
+```
+sdiff -s passwords.new passwords.old
+```
+
+## Level 18
+**Note:** `.bashrc` modified to log me out when logging in with SSH
+* Due to level 19
+
+```
+ssh -l bandit18 localhost cat readme
+```
+* The command run after connecting is `cat readme`
+* Could use '`-t`' to then open `/bin/sh` to get terminal
